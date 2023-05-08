@@ -11,11 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     
 </head>
-    <section id="instruction_sheet">
-<body>
 
+<body>
+  <dialog id="instructions-dialog" class="instructions-dialog" >  
+  <section id="instruction_sheet">
   <div class="sheet-container">
-    <div class="img_wrapper  rowFlex colonel_bottom"><img src="./img/colonel.svg" class="colonel" alt="Colonel says:">
+    <div class="img_wrapper  rowFlex"><img src="./img/colonel.svg" class="colonel" alt="Colonel says:">
     </div> 
     
     <div class="bubble">  
@@ -26,7 +27,7 @@
     </div>
   </div>
 
-  <div class="sheet-container minimapDiv" >
+  <div class="sheet-container minimapDiv" id="instr-1">
   <div class="img_wrapper columnFlex">  
     <p id="start">Starts <span class="redletter"> here</span></p>
     <img src="./img/table_mini.svg" alt="first and last tile" class="colonel">
@@ -90,7 +91,15 @@
 </div>
 </section>
 <section id="start_game_button">
-<button id="start-game">Start new game</button>
+<a id="start-game" href="#instr-1">Start new game</a>
 </section>
+</dialog>
+<script>
+document.getElementById('instructions-dialog').showModal()
+
+function nextInstr(){
+
+}
+</script>
 </body>
 </html>
