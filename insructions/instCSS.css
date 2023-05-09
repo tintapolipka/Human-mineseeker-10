@@ -4,8 +4,10 @@ dialog.instructions-dialog{
     margin:0;
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
-
+    overflow:hidden;
+    border-radius: 10px;
     background: #9a9261 url("camuflage.svg") repeat top left; 
+    scroll-behavior: smooth;
 }
 
 
@@ -124,25 +126,60 @@ margin: 10px;
     margin: 10px;
 }
 
-#start-game{
-    font-family: 'Press Start 2P', cursive;
+.start-game{
     background-color: red;
-    padding: 15px;
-    border-radius: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    transition-duration: 200ms;
-    
 }
 
-#start-game:hover{
+.instr-button:hover{
     box-shadow: 0 0 2px 2px brown;
     color: white;
 }
 
-#start_game_button{
-    position: sticky;
-    bottom: 0;
-    left: 110px;
+.instr-button{
+    font-family: 'Press Start 2P', cursive;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 10px 0;
+    transition-duration: 200ms;
+    text-decoration: none;
+    color: black;
     z-index: 100;
+}
+
+#start_game_button{
+    left: 110px;
+    position: sticky;
+    bottom: 1px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#next-sheet-button{
+    display: inline;
+    padding: 15px;
+    background-color: #9a9261;
+    z-index:101;
+    left: 10px;
+    position: sticky;
+    bottom: 10px;
+    box-shadow: 0 0 1px 2px  yellowgreen;
+    align-self: flex-end;
+}
+
+#next-sheet-button:hover{
+    box-shadow: 0 0 2px 3px  yellow; 
+}
+
+/*
+#next-sheet-button-container{
+    left: 10px;
+    position: sticky;
+    bottom: 10px;
+}
+*/
+
+#instruction_sheet{
+    background-color: none;
 }

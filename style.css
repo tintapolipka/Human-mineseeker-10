@@ -123,7 +123,7 @@ z-index:5;
     font-size: 12pt;
 }
 
-section {
+.purple-section {
     align-items: center;
     display:flex;
     justify-content: space-around;

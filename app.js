@@ -7,7 +7,7 @@ let tileNumber = columnLengthInTile*rowLengthInTile;
 // constructing the frame for tiles
 const tileDivSection = document.getElementById('mineFieldBox');
 
-//creating random number generator function to randomize tileset:
+//random number generator function to randomize tileset:
 function rng(integer){return Math.floor(Math.random() * integer) + 1;}
 
 // creating an array to make place for mines
@@ -16,8 +16,6 @@ let bombArray =['BOOM'];
 
 // POPUPS ******************************************************** 
 
-/*TODO extract-olni az alaábbiakat ebbe a függvénybe,
- mindenhol kicserélni!  Fontos: az ID-k neve "" között legyen!*/
 const toggleIt = (wichWindow) => {
   document.getElementById(wichWindow).classList.toggle("up"); 
 }
@@ -130,6 +128,7 @@ const levelFinished = ()=>{
    }
 }
 
+/*
 // for cycle to create given number of tiles
   for(i=1; i<(tileNumber+1); i++){
     tileDivSection.innerHTML+=`<div id="tile${i}" class="tileBasicClass">
@@ -138,6 +137,7 @@ const levelFinished = ()=>{
     </div>`;
  bombArray[i]= false;
 }
+*/
 
 // MOVING THE PLAYER'S AVATAR************************************
 // Imported CODE section from: https://www.tutorialspoint.com/detecting-arrow-key-presses-in-javascript
@@ -167,7 +167,8 @@ document.onkeydown = function (event) {
 let currentTile =1;
 // Show or hide the active tile
 const TileMarkSwich = () => {document.getElementById(`tile${currentTile}`).classList.toggle('activeTile');}
-TileMarkSwich();
+
+//TileMarkSwich();
 // Locate avatar's position 
 let avatarDiv = document.getElementById('avatar')
 // avatar positioning function
@@ -363,6 +364,18 @@ function newLevel(){
 }
 
 // FIRST LEVEL START
-newLevel();
+//newLevel();
+document.getElementById('instructions-dialog').showModal();
+let nextInstrNr = 1;
+function nextInstr(){
+document.getElementById('next-sheet-button').href=`#instr-${nextInstrNr}`;
+//document.getElementById('next-sheet-button').click();
+if (nextInstrNr===6) {
+  document.querySelectorAll('.bubble')[0].innerText = 'Click on the\n Start new game\n button Soldier!\n\nDon\'t stall!';
+}
+nextInstrNr>5? nextInstrNr = 0 : nextInstrNr++;
+
+console.log(nextInstrNr)
+}
 
 
