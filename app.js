@@ -143,7 +143,11 @@ const levelFinished = ()=>{
 // Imported CODE section from: https://www.tutorialspoint.com/detecting-arrow-key-presses-in-javascript
 document.onkeydown = function (event) {
     switch (event.keyCode) {
-       case 37:
+      case 13: 
+         
+         break;
+
+      case 37:
           
           step('Left');
           break;
@@ -366,16 +370,24 @@ function newLevel(){
 // FIRST LEVEL START
 //newLevel();
 document.getElementById('instructions-dialog').showModal();
-let nextInstrNr = 1;
+let nextInstrNr = -3;
 function nextInstr(){
 document.getElementById('next-sheet-button').href=`#instr-${nextInstrNr}`;
 //document.getElementById('next-sheet-button').click();
 if (nextInstrNr===6) {
   document.querySelectorAll('.bubble')[0].innerText = 'Click on the\n Start new game\n button Soldier!\n\nDon\'t stall!';
+  document.getElementById('next-sheet-button').classList.remove('buttonGlow');
+  document.getElementById('start-game').classList.add('buttonGlow');
+} else if(nextInstrNr===-3){
+   document.querySelectorAll('.bubble')[0].innerText = 'Your new\n comission is\n mineseeker!'; 
+} else if(nextInstrNr=== -2){
+   document.querySelectorAll('.bubble')[0].innerText = 'What?\n Defuse-kit?'; 
+} else if(nextInstrNr=== -1){
+   document.querySelectorAll('.bubble')[0].innerText = `You've got\n boots, aren't\n ya?`; 
+   nextInstrNr++;
 }
-nextInstrNr>5? nextInstrNr = 0 : nextInstrNr++;
 
-console.log(nextInstrNr)
+nextInstrNr>5? nextInstrNr = 0 : nextInstrNr++;
 }
 
 

@@ -1,13 +1,15 @@
 dialog.instructions-dialog{
     max-height: 50%;
     position: relative;
-    margin:0;
+    margin-left: auto;
+    margin-right: auto;
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
     overflow:hidden;
     border-radius: 10px;
     background: #9a9261 url("camuflage.svg") repeat top left; 
     scroll-behavior: smooth;
+    
 }
 
 
@@ -32,7 +34,7 @@ position: relative;
 margin:20px;
 padding: auto;
 width: 100%;
-height: fit-content;
+height: 60vh;
 display: flex;
 flex-direction: row;
 flex-wrap: nowrap;
@@ -46,7 +48,8 @@ margin: 10px;
 }
 
 .minimapDiv{
-    height:300px
+    /*height:300px*/
+    height: 60vh;
 }
 
 .inst_img{
@@ -182,4 +185,17 @@ margin: 10px;
 
 #instruction_sheet{
     background-color: none;
+}
+
+@keyframes buttonGlow {
+    0% {box-shadow: 0 0 1px 2px greenyellow;}
+    50% {box-shadow: 0 0 3px 7px greenyellow;}
+    100% {box-shadow: 0 0 1px 2px greenyellow;}
+}
+
+.buttonGlow {
+    animation-name: buttonGlow;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count:infinite;
 }
