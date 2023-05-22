@@ -174,6 +174,7 @@ const activateMT = ()=>{
     metalDetectorNumber--;
     // a piacon is megjenik az inventory tartalmának változása
     document.getElementById('market-MT-Num').textContent = metalDetectorNumber + ' ';
+    shouldIBeep(MTCaseR1(currentTile));
   }
   else{console.warn('Hiba! Elfogyott a MetalDetector!')};
 }

@@ -108,7 +108,7 @@ const doesItBOOM = () => {if(bombArray[currentTile]){
    if(lifeNumber<1){
       // TODO!!!! FAPADOS MEGOLDÁS!
       document.querySelector('#felugro p').textContent= `YOUR SCORE: ${score}`;
-      document.querySelector('#felugro img').src='../img/game_over.svg';
+      document.querySelector('#felugro img').src='./img/game_over.svg';
       document.querySelector('#felugro button').innerText = 'New';
       document.querySelector('#felugro button').onclick =function(event){newLevel()}
       score = 0;
@@ -374,7 +374,7 @@ let nextInstrNr = -3;
 function nextInstr(){
 document.getElementById('next-sheet-button').href=`#instr-${nextInstrNr}`;
 //document.getElementById('next-sheet-button').click();
-if (nextInstrNr===6) {
+if (nextInstrNr===7) {
   document.querySelectorAll('.bubble')[0].innerText = 'Click on the\n Start new game\n button Soldier!\n\nDon\'t stall!';
   document.getElementById('next-sheet-button').classList.remove('buttonGlow');
   document.getElementById('start-game').classList.add('buttonGlow');
@@ -387,7 +387,7 @@ if (nextInstrNr===6) {
    nextInstrNr++;
 }
 
-nextInstrNr>5? nextInstrNr = 0 : nextInstrNr++;
+nextInstrNr>6? nextInstrNr = 0 : nextInstrNr++;
 }
 
 
