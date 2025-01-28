@@ -110,7 +110,7 @@ const doesItBOOM = () => {if(bombArray[currentTile]){
       document.querySelector('#felugro p').textContent= `YOUR SCORE: ${score}`;
       document.querySelector('#felugro img').src='./img/game_over.svg';
       document.querySelector('#felugro button').innerText = 'New';
-      document.querySelector('#felugro button').onclick =function(event){location.reload()}
+      document.querySelector('#felugro button').onclick =function(_event){location.reload()}
    
    }
 }
